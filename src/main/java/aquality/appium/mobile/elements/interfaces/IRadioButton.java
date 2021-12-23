@@ -1,0 +1,13 @@
+package aquality.appium.mobile.elements.interfaces;
+
+import aquality.appium.mobile.elements.interfaces.IElement;
+
+public interface IRadioButton extends IElement {
+
+    /**
+     * Gets RadioButton state.
+     *
+     * @return True if checked and false otherwise.
+     */
+    boolean isChecked();
+}
