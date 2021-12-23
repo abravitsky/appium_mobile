@@ -8,6 +8,11 @@
     <artifactId>appium_mobile</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <surefire.version>2.18.1</surefire.version>
+        <aspectj.version>1.8.10</aspectj.version>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -18,6 +23,37 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.version}</version>
+                <configuration>
+                    <forkCount>10</forkCount>
+                    <reuseForks>true</reuseForks>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        -Xmx1024m
+                    </argLine>
+                    <!--argLine>-Dfile.encoding=UTF-8</argLine-->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/debug.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+
+                    <properties>
+                        <property>
+                            <name>usedefaultlisteners</name> <!-- disabling default listeners is optional -->
+                            <value>false</value>
+                        </property>
+                    </properties>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
