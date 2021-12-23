@@ -37,7 +37,7 @@
                     </argLine>
                     <!--argLine>-Dfile.encoding=UTF-8</argLine-->
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/debug.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/suites/${suite}.xml</suiteXmlFile>
                     </suiteXmlFiles>
 
                     <properties>
