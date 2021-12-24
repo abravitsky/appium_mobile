@@ -36,9 +36,9 @@
                         -Xmx1024m
                     </argLine>
                     <!--argLine>-Dfile.encoding=UTF-8</argLine-->
-                    <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/suites/debug.xml</suiteXmlFile>
-                    </suiteXmlFiles>
+<!--                    <suiteXmlFiles>-->
+<!--                        <suiteXmlFile>src/test/resources/suites/debug.xml</suiteXmlFile>-->
+<!--                    </suiteXmlFiles>-->
 
                     <properties>
                         <property>
@@ -46,6 +46,7 @@
                             <value>false</value>
                         </property>
                     </properties>
+
                 </configuration>
                 <dependencies>
                     <dependency>
